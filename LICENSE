@@ -1,0 +1,11 @@
+PrayerTimes is a public-domain application that uses:
+
+* https://www.iconsdb.com/
+* https://timezonedb.com/api
+* https://geographiclib.sourceforge.io/
+* https://wiki.openstreetmap.org/wiki/Nominatim
+* http://conga.oan.es/~alonso/doku.php?id=blog:sun_moon_position
+* https://play.google.com/store/apps/details?id=com.issolah.marwalarm
+* https://github.com/batoulapps/adhan-java/blob/master/adhan/src/main/java/com/batoulapps/adhan/PrayerTimes.java
+* http://praytimes.org/code/git/?a=viewblob&p=PrayTimes&h=093f77d6cc83b53fb12e9900803d5fa75dacd110&hb=HEAD&f=v1/java/PrayTime.java
+* https://github.com/msarhan/ummalqura-calendar/blob/master/src/main/java/com/github/msarhan/ummalqura/calendar/UmmalquraGregorianConverter.java

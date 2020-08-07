@@ -1,0 +1,701 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:fillViewport="true"
+    android:keepScreenOn="true"
+    android:layoutDirection="rtl">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:padding="4dp">
+
+        <TextView
+            android:id="@+id/am_view_info"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:autoLink="web"
+            android:background="@drawable/border"
+            android:paddingLeft="4dp"
+            android:paddingTop="8dp"
+            android:paddingRight="4dp"
+            android:paddingBottom="8dp"
+            android:text=""
+            android:layout_marginBottom="12dp"
+            android:textAlignment="center"
+            android:textColor="@android:color/holo_red_dark" />
+
+        <LinearLayout
+            android:id="@+id/am_linear_widget"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+
+            android:background="#2b5f88"
+            android:layoutDirection="rtl"
+            android:orientation="vertical"
+            android:padding="@dimen/widgetPadding">
+
+            <LinearLayout
+                android:id="@+id/wg_header"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="@dimen/widgetCellMarginTopBottom"
+                android:background="#5a000000"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:id="@+id/wg_time"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="20"
+                    android:ellipsize="end"
+                    android:gravity="center"
+                    android:lines="1"
+                    android:text="@string/string_invalid"
+                    android:textColor="#ffffff" />
+
+                <ImageView
+                    android:id="@+id/wg_image_settings"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="6"
+                    android:padding="4dp"
+                    android:src="@drawable/settings" />
+
+                <TextView
+                    android:id="@+id/wg_message"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="40"
+                    android:ellipsize="end"
+                    android:gravity="center"
+                    android:lines="1"
+                    android:text="@string/string_invalid"
+                    android:textColor="#ffffff" />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/widgetCellMarginTopBottom"
+                android:layout_marginBottom="@dimen/widgetCellMarginTopBottom"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:id="@+id/wg_cell_01_00"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="@dimen/widgetCellMarginStartEnd"
+                    android:layout_marginEnd="@dimen/widgetCellMarginStartEnd"
+                    android:layout_weight="1"
+                    android:ellipsize="end"
+                    android:gravity="center"
+                    android:lines="2"
+                    android:text="@string/string_invalid"
+                    android:textColor="#ffffff" />
+
+                <TextView
+                    android:id="@+id/wg_cell_01_01"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="@dimen/widgetCellMarginStartEnd"
+                    android:layout_marginEnd="@dimen/widgetCellMarginStartEnd"
+                    android:layout_weight="1"
+                    android:ellipsize="end"
+                    android:gravity="center"
+                    android:lines="2"
+                    android:text="@string/string_invalid"
+                    android:textColor="#ffffff" />
+
+                <TextView
+                    android:id="@+id/wg_cell_01_02"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="@dimen/widgetCellMarginStartEnd"
+                    android:layout_marginEnd="@dimen/widgetCellMarginStartEnd"
+                    android:layout_weight="1"
+                    android:ellipsize="end"
+                    android:gravity="center"
+                    android:lines="2"
+                    android:text="@string/string_invalid"
+                    android:textColor="#ffffff" />
+
+                <TextView
+                    android:id="@+id/wg_cell_01_03"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="@dimen/widgetCellMarginStartEnd"
+                    android:layout_marginEnd="@dimen/widgetCellMarginStartEnd"
+                    android:layout_weight="1"
+                    android:ellipsize="end"
+                    android:gravity="center"
+                    android:lines="2"
+                    android:text="@string/string_invalid"
+                    android:textColor="#ffffff" />
+
+                <TextView
+                    android:id="@+id/wg_cell_01_04"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="@dimen/widgetCellMarginStartEnd"
+                    android:layout_marginEnd="@dimen/widgetCellMarginStartEnd"
+                    android:layout_weight="1"
+                    android:ellipsize="end"
+                    android:gravity="center"
+                    android:lines="2"
+                    android:text="@string/string_invalid"
+                    android:textColor="#ffffff" />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/widgetCellMarginTopBottom"
+                android:layout_marginBottom="@dimen/widgetCellMarginTopBottom"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:id="@+id/wg_cell_02_00"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="@dimen/widgetCellMarginStartEnd"
+                    android:layout_marginEnd="@dimen/widgetCellMarginStartEnd"
+                    android:layout_weight="1"
+                    android:ellipsize="end"
+                    android:gravity="center"
+                    android:lines="2"
+                    android:text="@string/string_invalid"
+                    android:textColor="#ffffff" />
+
+                <TextView
+                    android:id="@+id/wg_cell_02_01"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="@dimen/widgetCellMarginStartEnd"
+                    android:layout_marginEnd="@dimen/widgetCellMarginStartEnd"
+                    android:layout_weight="1"
+                    android:ellipsize="end"
+                    android:gravity="center"
+                    android:lines="2"
+                    android:text="@string/string_invalid"
+                    android:textColor="#ffffff" />
+
+                <TextView
+                    android:id="@+id/wg_cell_02_02"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="@dimen/widgetCellMarginStartEnd"
+                    android:layout_marginEnd="@dimen/widgetCellMarginStartEnd"
+                    android:layout_weight="1"
+                    android:ellipsize="end"
+                    android:gravity="center"
+                    android:lines="2"
+                    android:text="@string/string_invalid"
+                    android:textColor="#ffffff" />
+
+                <TextView
+                    android:id="@+id/wg_cell_02_03"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="@dimen/widgetCellMarginStartEnd"
+                    android:layout_marginEnd="@dimen/widgetCellMarginStartEnd"
+                    android:layout_weight="1"
+                    android:ellipsize="end"
+                    android:gravity="center"
+                    android:lines="2"
+                    android:text="@string/string_invalid"
+                    android:textColor="#ffffff" />
+
+                <TextView
+                    android:id="@+id/wg_cell_02_04"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="@dimen/widgetCellMarginStartEnd"
+                    android:layout_marginEnd="@dimen/widgetCellMarginStartEnd"
+                    android:layout_weight="1"
+                    android:ellipsize="end"
+                    android:gravity="center"
+                    android:lines="2"
+                    android:text="@string/string_invalid"
+                    android:textColor="#ffffff" />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/widgetCellMarginTopBottom"
+                android:layout_marginBottom="@dimen/widgetCellMarginTopBottom"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:id="@+id/wg_cell_03_00"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="@dimen/widgetCellMarginStartEnd"
+                    android:layout_marginEnd="@dimen/widgetCellMarginStartEnd"
+                    android:layout_weight="1"
+                    android:ellipsize="end"
+                    android:gravity="center"
+                    android:lines="2"
+                    android:text="@string/string_invalid"
+                    android:textColor="#ffffff" />
+
+                <TextView
+                    android:id="@+id/wg_cell_03_01"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="@dimen/widgetCellMarginStartEnd"
+                    android:layout_marginEnd="@dimen/widgetCellMarginStartEnd"
+                    android:layout_weight="1"
+                    android:ellipsize="end"
+                    android:gravity="center"
+                    android:lines="2"
+                    android:text="@string/string_invalid"
+                    android:textColor="#ffffff" />
+
+                <TextView
+                    android:id="@+id/wg_cell_03_02"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="@dimen/widgetCellMarginStartEnd"
+                    android:layout_marginEnd="@dimen/widgetCellMarginStartEnd"
+                    android:layout_weight="1"
+                    android:ellipsize="end"
+                    android:gravity="center"
+                    android:lines="2"
+                    android:text="@string/string_invalid"
+                    android:textColor="#ffffff" />
+
+                <TextView
+                    android:id="@+id/wg_cell_03_03"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="@dimen/widgetCellMarginStartEnd"
+                    android:layout_marginEnd="@dimen/widgetCellMarginStartEnd"
+                    android:layout_weight="1"
+                    android:ellipsize="end"
+                    android:gravity="center"
+                    android:lines="2"
+                    android:text="@string/string_invalid"
+                    android:textColor="#ffffff" />
+
+                <TextView
+                    android:id="@+id/wg_cell_03_04"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="@dimen/widgetCellMarginStartEnd"
+                    android:layout_marginEnd="@dimen/widgetCellMarginStartEnd"
+                    android:layout_weight="1"
+                    android:ellipsize="end"
+                    android:gravity="center"
+                    android:lines="2"
+                    android:text="@string/string_invalid"
+                    android:textColor="#ffffff" />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/widgetCellMarginTopBottom"
+                android:layout_marginBottom="@dimen/widgetCellMarginTopBottom"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:id="@+id/wg_cell_04_00"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="@dimen/widgetCellMarginStartEnd"
+                    android:layout_marginEnd="@dimen/widgetCellMarginStartEnd"
+                    android:layout_weight="1"
+                    android:ellipsize="end"
+                    android:gravity="center"
+                    android:lines="2"
+                    android:text="@string/string_invalid"
+                    android:textColor="#ffffff" />
+
+                <TextView
+                    android:id="@+id/wg_cell_04_01"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="@dimen/widgetCellMarginStartEnd"
+                    android:layout_marginEnd="@dimen/widgetCellMarginStartEnd"
+                    android:layout_weight="1"
+                    android:ellipsize="end"
+                    android:gravity="center"
+                    android:lines="2"
+                    android:text="@string/string_invalid"
+                    android:textColor="#ffffff" />
+
+                <TextView
+                    android:id="@+id/wg_cell_04_02"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="@dimen/widgetCellMarginStartEnd"
+                    android:layout_marginEnd="@dimen/widgetCellMarginStartEnd"
+                    android:layout_weight="1"
+                    android:ellipsize="end"
+                    android:gravity="center"
+                    android:lines="2"
+                    android:text="@string/string_invalid"
+                    android:textColor="#ffffff" />
+
+                <TextView
+                    android:id="@+id/wg_cell_04_03"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="@dimen/widgetCellMarginStartEnd"
+                    android:layout_marginEnd="@dimen/widgetCellMarginStartEnd"
+                    android:layout_weight="1"
+                    android:ellipsize="end"
+                    android:gravity="center"
+                    android:lines="2"
+                    android:text="@string/string_invalid"
+                    android:textColor="#ffffff" />
+
+                <TextView
+                    android:id="@+id/wg_cell_04_04"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="@dimen/widgetCellMarginStartEnd"
+                    android:layout_marginEnd="@dimen/widgetCellMarginStartEnd"
+                    android:layout_weight="1"
+                    android:ellipsize="end"
+                    android:gravity="center"
+                    android:lines="2"
+                    android:text="@string/string_invalid"
+                    android:textColor="#ffffff" />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/widgetCellMarginTopBottom"
+                android:layout_marginBottom="@dimen/widgetCellMarginTopBottom"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:id="@+id/wg_cell_05_00"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="@dimen/widgetCellMarginStartEnd"
+                    android:layout_marginEnd="@dimen/widgetCellMarginStartEnd"
+                    android:layout_weight="1"
+                    android:ellipsize="end"
+                    android:gravity="center"
+                    android:lines="2"
+                    android:text="@string/string_invalid"
+                    android:textColor="#ffffff" />
+
+                <TextView
+                    android:id="@+id/wg_cell_05_01"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="@dimen/widgetCellMarginStartEnd"
+                    android:layout_marginEnd="@dimen/widgetCellMarginStartEnd"
+                    android:layout_weight="1"
+                    android:ellipsize="end"
+                    android:gravity="center"
+                    android:lines="2"
+                    android:text="@string/string_invalid"
+                    android:textColor="#ffffff" />
+
+                <TextView
+                    android:id="@+id/wg_cell_05_02"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="@dimen/widgetCellMarginStartEnd"
+                    android:layout_marginEnd="@dimen/widgetCellMarginStartEnd"
+                    android:layout_weight="1"
+                    android:ellipsize="end"
+                    android:gravity="center"
+                    android:lines="2"
+                    android:text="@string/string_invalid"
+                    android:textColor="#ffffff" />
+
+                <TextView
+                    android:id="@+id/wg_cell_05_03"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="@dimen/widgetCellMarginStartEnd"
+                    android:layout_marginEnd="@dimen/widgetCellMarginStartEnd"
+                    android:layout_weight="1"
+                    android:ellipsize="end"
+                    android:gravity="center"
+                    android:lines="2"
+                    android:text="@string/string_invalid"
+                    android:textColor="#ffffff" />
+
+                <TextView
+                    android:id="@+id/wg_cell_05_04"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="@dimen/widgetCellMarginStartEnd"
+                    android:layout_marginEnd="@dimen/widgetCellMarginStartEnd"
+                    android:layout_weight="1"
+                    android:ellipsize="end"
+                    android:gravity="center"
+                    android:lines="2"
+                    android:text="@string/string_invalid"
+                    android:textColor="#ffffff" />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/widgetCellMarginTopBottom"
+                android:layout_marginBottom="@dimen/widgetCellMarginTopBottom"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:id="@+id/wg_cell_06_00"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="@dimen/widgetCellMarginStartEnd"
+                    android:layout_marginEnd="@dimen/widgetCellMarginStartEnd"
+                    android:layout_weight="2"
+                    android:ellipsize="end"
+                    android:gravity="center"
+                    android:lines="2"
+                    android:text="@string/string_invalid"
+                    android:textColor="#ffffff" />
+
+                <TextView
+                    android:id="@+id/wg_cell_06_02"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="@dimen/widgetCellMarginStartEnd"
+                    android:layout_marginEnd="@dimen/widgetCellMarginStartEnd"
+                    android:layout_weight="1"
+                    android:ellipsize="end"
+                    android:gravity="center"
+                    android:lines="2"
+                    android:text="@string/string_invalid"
+                    android:textColor="#ffffff" />
+
+                <TextView
+                    android:id="@+id/wg_cell_06_03"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="@dimen/widgetCellMarginStartEnd"
+                    android:layout_marginEnd="@dimen/widgetCellMarginStartEnd"
+                    android:layout_weight="1"
+                    android:ellipsize="end"
+                    android:gravity="center"
+                    android:lines="2"
+                    android:text="@string/string_invalid"
+                    android:textColor="#ffffff" />
+
+                <TextView
+                    android:id="@+id/wg_cell_06_04"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="@dimen/widgetCellMarginStartEnd"
+                    android:layout_marginEnd="@dimen/widgetCellMarginStartEnd"
+                    android:layout_weight="1"
+                    android:ellipsize="end"
+                    android:gravity="center"
+                    android:lines="2"
+                    android:text="@string/string_invalid"
+                    android:textColor="#ffffff" />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/wg_footer"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/widgetCellMarginTopBottom"
+                android:background="#5a000000"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:id="@+id/wg_date_hijri"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="5"
+                    android:ellipsize="end"
+                    android:gravity="center"
+                    android:lines="1"
+                    android:text="@string/string_invalid"
+                    android:textColor="#ffffff" />
+
+                <ImageView
+                    android:id="@+id/wg_image_screenshot"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:padding="4dp"
+                    android:src="@drawable/camera" />
+
+                <TextView
+                    android:id="@+id/wg_date_greg"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="5"
+                    android:ellipsize="end"
+                    android:gravity="center"
+                    android:lines="1"
+                    android:text="@string/string_invalid"
+                    android:textColor="#ffffff" />
+
+            </LinearLayout>
+
+        </LinearLayout>
+
+        <androidx.appcompat.widget.LinearLayoutCompat
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="12dp"
+            android:background="@drawable/border"
+            android:orientation="vertical"
+            android:padding="4dp">
+
+            <androidx.appcompat.widget.LinearLayoutCompat
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+                <Button
+                    android:id="@+id/am_button_calendar"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:stateListAnimator="@null"
+                    android:text="التقويم الهجري" />
+
+                <Button
+                    android:id="@+id/am_button_shadow"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:stateListAnimator="@null"
+                    android:text="حساب الظل" />
+
+            </androidx.appcompat.widget.LinearLayoutCompat>
+
+
+        </androidx.appcompat.widget.LinearLayoutCompat>
+
+        <androidx.appcompat.widget.LinearLayoutCompat
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="12dp"
+            android:background="@drawable/border"
+            android:orientation="vertical"
+            android:padding="4dp">
+
+            <androidx.appcompat.widget.LinearLayoutCompat
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="4dp"
+                android:orientation="horizontal">
+
+                <Spinner
+                    android:id="@+id/am_spinner_earth_model"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:layout_weight="4"
+                    android:spinnerMode="dropdown" />
+
+            </androidx.appcompat.widget.LinearLayoutCompat>
+
+            <androidx.appcompat.widget.LinearLayoutCompat
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="12dp"
+                android:orientation="horizontal">
+
+                <CheckBox
+                    android:id="@+id/am_check_hijri_auto"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="تحديث تلقائي للتاريخ الهجري" />
+
+            </androidx.appcompat.widget.LinearLayoutCompat>
+
+            <androidx.appcompat.widget.LinearLayoutCompat
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+                <Spinner
+                    android:id="@+id/am_spinner_hijri_method"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:layout_weight="6"
+                    android:spinnerMode="dropdown" />
+
+                <Spinner
+                    android:id="@+id/am_spinner_hijri_adjust_days"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:layout_weight="2"
+                    android:spinnerMode="dropdown" />
+
+                <androidx.appcompat.widget.AppCompatEditText
+                    android:id="@+id/am_edit_date_greg"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="3"
+                    android:digits="-0123456789"
+                    android:layoutDirection="ltr"
+                    android:lines="1"
+                    android:maxLength="10"
+                    android:text="" />
+
+            </androidx.appcompat.widget.LinearLayoutCompat>
+
+            <androidx.appcompat.widget.LinearLayoutCompat
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:id="@+id/am_view_hijri"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="4dp"
+                    android:layout_marginEnd="4dp"
+                    android:layout_weight="1"
+                    android:background="@drawable/border"
+                    android:layoutDirection="rtl"
+                    android:padding="4dp"
+                    android:textAlignment="center"
+                    android:textColor="@android:color/holo_red_dark" />
+
+            </androidx.appcompat.widget.LinearLayoutCompat>
+
+            <androidx.appcompat.widget.LinearLayoutCompat
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="12dp"
+                android:orientation="horizontal">
+
+                <Button
+                    android:id="@+id/am_button_save"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:stateListAnimator="@null"
+                    android:text="حفظ الإعدادات" />
+
+            </androidx.appcompat.widget.LinearLayoutCompat>
+
+        </androidx.appcompat.widget.LinearLayoutCompat>
+
+    </LinearLayout>
+
+</ScrollView>

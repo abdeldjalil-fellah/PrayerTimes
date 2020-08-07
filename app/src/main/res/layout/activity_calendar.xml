@@ -1,0 +1,1022 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:fillViewport="true"
+    android:keepScreenOn="true"
+    android:layoutDirection="rtl">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:padding="0dp">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="4dp"
+            android:layout_marginBottom="4dp"
+            android:background="@drawable/border"
+            android:orientation="vertical"
+            android:padding="4dp">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+                <CheckBox
+                    android:id="@+id/cal_check_details"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:checked="true"
+                    android:text="ملحق" />
+
+                <CheckBox
+                    android:id="@+id/cal_check_shot"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="صورة" />
+
+                <Spinner
+                    android:id="@+id/cal_spinner_month"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="14dp"
+                    android:spinnerMode="dropdown" />
+
+                <EditText
+                    android:id="@+id/cal_edit_year"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:digits="0123456789"
+                    android:layoutDirection="ltr"
+                    android:maxLength="4" />
+
+            </LinearLayout>
+
+            <Button
+                android:id="@+id/cal_button_go"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:stateListAnimator="@null"
+                android:text="إنشاء" />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/cal_linear"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@drawable/border"
+            android:orientation="vertical"
+            android:padding="4dp"
+            android:visibility="invisible">
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/cal_header"
+                style="@style/CalendarDayOfWeek"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layoutDirection="rtl"
+                android:lines="1"
+                android:text="ربيع الآخر 1441هـ الموافق نوفمبر/ديسمبر 2019م" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="4dp"
+                android:orientation="vertical">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal">
+
+                    <androidx.appcompat.widget.AppCompatTextView
+                        android:id="@+id/cal_dow_saturday"
+                        style="@style/CalendarDayOfWeek"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:lines="1"
+                        android:text="السّبت" />
+
+                    <androidx.appcompat.widget.AppCompatTextView
+                        android:id="@+id/cal_dow_sunday"
+                        style="@style/CalendarDayOfWeek"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:lines="1"
+                        android:text="الأحد" />
+
+                    <androidx.appcompat.widget.AppCompatTextView
+                        android:id="@+id/cal_dow_monday"
+                        style="@style/CalendarDayOfWeek"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:lines="1"
+                        android:text="الاثنين" />
+
+                    <androidx.appcompat.widget.AppCompatTextView
+                        android:id="@+id/cal_dow_tuesday"
+                        style="@style/CalendarDayOfWeek"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:lines="1"
+                        android:text="الثلاثاء" />
+
+                    <androidx.appcompat.widget.AppCompatTextView
+                        android:id="@+id/cal_dow_wednesday"
+                        style="@style/CalendarDayOfWeek"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:lines="1"
+                        android:text="الأربعاء" />
+
+                    <androidx.appcompat.widget.AppCompatTextView
+                        android:id="@+id/cal_dow_thursday"
+                        style="@style/CalendarDayOfWeek"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:lines="1"
+                        android:text="الخميس" />
+
+                    <androidx.appcompat.widget.AppCompatTextView
+                        android:id="@+id/cal_dow_friday"
+                        style="@style/CalendarDayOfWeek"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:lines="1"
+                        android:text="الجُمعة" />
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal">
+
+                    <LinearLayout
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:background="@drawable/border"
+                        android:orientation="vertical">
+
+                        <androidx.appcompat.widget.AppCompatTextView
+                            android:id="@+id/cal_cell11h"
+                            style="@style/CalendarHijri"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:text="00" />
+
+                        <androidx.appcompat.widget.AppCompatTextView
+                            android:id="@+id/cal_cell11g"
+                            style="@style/CalendarGreg"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:text="00" />
+
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:background="@drawable/border"
+                        android:orientation="vertical">
+
+                        <androidx.appcompat.widget.AppCompatTextView
+                            android:id="@+id/cal_cell12h"
+                            style="@style/CalendarHijri"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:text="00" />
+
+                        <androidx.appcompat.widget.AppCompatTextView
+                            android:id="@+id/cal_cell12g"
+                            style="@style/CalendarGreg"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:text="00" />
+
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:background="@drawable/border"
+                        android:orientation="vertical">
+
+                        <androidx.appcompat.widget.AppCompatTextView
+                            android:id="@+id/cal_cell13h"
+                            style="@style/CalendarHijri"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:text="00" />
+
+                        <androidx.appcompat.widget.AppCompatTextView
+                            android:id="@+id/cal_cell13g"
+                            style="@style/CalendarGreg"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:text="00" />
+
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:background="@drawable/border"
+                        android:orientation="vertical">
+
+                        <androidx.appcompat.widget.AppCompatTextView
+                            android:id="@+id/cal_cell14h"
+                            style="@style/CalendarHijri"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:text="00" />
+
+                        <androidx.appcompat.widget.AppCompatTextView
+                            android:id="@+id/cal_cell14g"
+                            style="@style/CalendarGreg"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:text="00" />
+
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:background="@drawable/border"
+                        android:orientation="vertical">
+
+                        <androidx.appcompat.widget.AppCompatTextView
+                            android:id="@+id/cal_cell15h"
+                            style="@style/CalendarHijri"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:text="00" />
+
+                        <androidx.appcompat.widget.AppCompatTextView
+                            android:id="@+id/cal_cell15g"
+                            style="@style/CalendarGreg"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:text="00" />
+
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:background="@drawable/border"
+                        android:orientation="vertical">
+
+                        <androidx.appcompat.widget.AppCompatTextView
+                            android:id="@+id/cal_cell16h"
+                            style="@style/CalendarHijri"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:text="00" />
+
+                        <androidx.appcompat.widget.AppCompatTextView
+                            android:id="@+id/cal_cell16g"
+                            style="@style/CalendarGreg"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:text="00" />
+
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:background="@drawable/border"
+                        android:orientation="vertical">
+
+                        <androidx.appcompat.widget.AppCompatTextView
+                            android:id="@+id/cal_cell17h"
+                            style="@style/CalendarHijri"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:text="00" />
+
+                        <androidx.appcompat.widget.AppCompatTextView
+                            android:id="@+id/cal_cell17g"
+                            style="@style/CalendarGreg"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:text="00" />
+
+                    </LinearLayout>
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal">
+
+                    <LinearLayout
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:background="@drawable/border"
+                        android:orientation="vertical">
+
+                        <androidx.appcompat.widget.AppCompatTextView
+                            android:id="@+id/cal_cell21h"
+                            style="@style/CalendarHijri"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:text="00" />
+
+                        <androidx.appcompat.widget.AppCompatTextView
+                            android:id="@+id/cal_cell21g"
+                            style="@style/CalendarGreg"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:text="00" />
+
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:background="@drawable/border"
+                        android:orientation="vertical">
+
+                        <androidx.appcompat.widget.AppCompatTextView
+                            android:id="@+id/cal_cell22h"
+                            style="@style/CalendarHijri"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:text="00" />
+
+                        <androidx.appcompat.widget.AppCompatTextView
+                            android:id="@+id/cal_cell22g"
+                            style="@style/CalendarGreg"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:text="00" />
+
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:background="@drawable/border"
+                        android:orientation="vertical">
+
+                        <androidx.appcompat.widget.AppCompatTextView
+                            android:id="@+id/cal_cell23h"
+                            style="@style/CalendarHijri"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:text="00" />
+
+                        <androidx.appcompat.widget.AppCompatTextView
+                            android:id="@+id/cal_cell23g"
+                            style="@style/CalendarGreg"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:text="00" />
+
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:background="@drawable/border"
+                        android:orientation="vertical">
+
+                        <androidx.appcompat.widget.AppCompatTextView
+                            android:id="@+id/cal_cell24h"
+                            style="@style/CalendarHijri"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:text="00" />
+
+                        <androidx.appcompat.widget.AppCompatTextView
+                            android:id="@+id/cal_cell24g"
+                            style="@style/CalendarGreg"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:text="00" />
+
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:background="@drawable/border"
+                        android:orientation="vertical">
+
+                        <androidx.appcompat.widget.AppCompatTextView
+                            android:id="@+id/cal_cell25h"
+                            style="@style/CalendarHijri"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:text="00" />
+
+                        <androidx.appcompat.widget.AppCompatTextView
+                            android:id="@+id/cal_cell25g"
+                            style="@style/CalendarGreg"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:text="00" />
+
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:background="@drawable/border"
+                        android:orientation="vertical">
+
+                        <androidx.appcompat.widget.AppCompatTextView
+                            android:id="@+id/cal_cell26h"
+                            style="@style/CalendarHijri"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:text="00" />
+
+                        <androidx.appcompat.widget.AppCompatTextView
+                            android:id="@+id/cal_cell26g"
+                            style="@style/CalendarGreg"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:text="00" />
+
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:background="@drawable/border"
+                        android:orientation="vertical">
+
+                        <androidx.appcompat.widget.AppCompatTextView
+                            android:id="@+id/cal_cell27h"
+                            style="@style/CalendarHijri"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:text="00" />
+
+                        <androidx.appcompat.widget.AppCompatTextView
+                            android:id="@+id/cal_cell27g"
+                            style="@style/CalendarGreg"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:text="00" />
+
+                    </LinearLayout>
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal">
+
+                    <LinearLayout
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:background="@drawable/border"
+                        android:orientation="vertical">
+
+                        <androidx.appcompat.widget.AppCompatTextView
+                            android:id="@+id/cal_cell31h"
+                            style="@style/CalendarHijri"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:text="00" />
+
+                        <androidx.appcompat.widget.AppCompatTextView
+                            android:id="@+id/cal_cell31g"
+                            style="@style/CalendarGreg"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:text="00" />
+
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:background="@drawable/border"
+                        android:orientation="vertical">
+
+                        <androidx.appcompat.widget.AppCompatTextView
+                            android:id="@+id/cal_cell32h"
+                            style="@style/CalendarHijri"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:text="00" />
+
+                        <androidx.appcompat.widget.AppCompatTextView
+                            android:id="@+id/cal_cell32g"
+                            style="@style/CalendarGreg"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:text="00" />
+
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:background="@drawable/border"
+                        android:orientation="vertical">
+
+                        <androidx.appcompat.widget.AppCompatTextView
+                            android:id="@+id/cal_cell33h"
+                            style="@style/CalendarHijri"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:text="00" />
+
+                        <androidx.appcompat.widget.AppCompatTextView
+                            android:id="@+id/cal_cell33g"
+                            style="@style/CalendarGreg"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:text="00" />
+
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:background="@drawable/border"
+                        android:orientation="vertical">
+
+                        <androidx.appcompat.widget.AppCompatTextView
+                            android:id="@+id/cal_cell34h"
+                            style="@style/CalendarHijri"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:text="00" />
+
+                        <androidx.appcompat.widget.AppCompatTextView
+                            android:id="@+id/cal_cell34g"
+                            style="@style/CalendarGreg"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:text="00" />
+
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:background="@drawable/border"
+                        android:orientation="vertical">
+
+                        <androidx.appcompat.widget.AppCompatTextView
+                            android:id="@+id/cal_cell35h"
+                            style="@style/CalendarHijri"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:text="00" />
+
+                        <androidx.appcompat.widget.AppCompatTextView
+                            android:id="@+id/cal_cell35g"
+                            style="@style/CalendarGreg"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:text="00" />
+
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:background="@drawable/border"
+                        android:orientation="vertical">
+
+                        <androidx.appcompat.widget.AppCompatTextView
+                            android:id="@+id/cal_cell36h"
+                            style="@style/CalendarHijri"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:text="00" />
+
+                        <androidx.appcompat.widget.AppCompatTextView
+                            android:id="@+id/cal_cell36g"
+                            style="@style/CalendarGreg"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:text="00" />
+
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:background="@drawable/border"
+                        android:orientation="vertical">
+
+                        <androidx.appcompat.widget.AppCompatTextView
+                            android:id="@+id/cal_cell37h"
+                            style="@style/CalendarHijri"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:text="00" />
+
+                        <androidx.appcompat.widget.AppCompatTextView
+                            android:id="@+id/cal_cell37g"
+                            style="@style/CalendarGreg"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:text="00" />
+
+                    </LinearLayout>
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal">
+
+                    <LinearLayout
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:background="@drawable/border"
+                        android:orientation="vertical">
+
+                        <androidx.appcompat.widget.AppCompatTextView
+                            android:id="@+id/cal_cell41h"
+                            style="@style/CalendarHijri"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:text="00" />
+
+                        <androidx.appcompat.widget.AppCompatTextView
+                            android:id="@+id/cal_cell41g"
+                            style="@style/CalendarGreg"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:text="00" />
+
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:background="@drawable/border"
+                        android:orientation="vertical">
+
+                        <androidx.appcompat.widget.AppCompatTextView
+                            android:id="@+id/cal_cell42h"
+                            style="@style/CalendarHijri"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:text="00" />
+
+                        <androidx.appcompat.widget.AppCompatTextView
+                            android:id="@+id/cal_cell42g"
+                            style="@style/CalendarGreg"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:text="00" />
+
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:background="@drawable/border"
+                        android:orientation="vertical">
+
+                        <androidx.appcompat.widget.AppCompatTextView
+                            android:id="@+id/cal_cell43h"
+                            style="@style/CalendarHijri"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:text="00" />
+
+                        <androidx.appcompat.widget.AppCompatTextView
+                            android:id="@+id/cal_cell43g"
+                            style="@style/CalendarGreg"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:text="00" />
+
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:background="@drawable/border"
+                        android:orientation="vertical">
+
+                        <androidx.appcompat.widget.AppCompatTextView
+                            android:id="@+id/cal_cell44h"
+                            style="@style/CalendarHijri"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:text="00" />
+
+                        <androidx.appcompat.widget.AppCompatTextView
+                            android:id="@+id/cal_cell44g"
+                            style="@style/CalendarGreg"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:text="00" />
+
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:background="@drawable/border"
+                        android:orientation="vertical">
+
+                        <androidx.appcompat.widget.AppCompatTextView
+                            android:id="@+id/cal_cell45h"
+                            style="@style/CalendarHijri"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:text="00" />
+
+                        <androidx.appcompat.widget.AppCompatTextView
+                            android:id="@+id/cal_cell45g"
+                            style="@style/CalendarGreg"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:text="00" />
+
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:background="@drawable/border"
+                        android:orientation="vertical">
+
+                        <androidx.appcompat.widget.AppCompatTextView
+                            android:id="@+id/cal_cell46h"
+                            style="@style/CalendarHijri"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:text="00" />
+
+                        <androidx.appcompat.widget.AppCompatTextView
+                            android:id="@+id/cal_cell46g"
+                            style="@style/CalendarGreg"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:text="00" />
+
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:background="@drawable/border"
+                        android:orientation="vertical">
+
+                        <androidx.appcompat.widget.AppCompatTextView
+                            android:id="@+id/cal_cell47h"
+                            style="@style/CalendarHijri"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:text="00" />
+
+                        <androidx.appcompat.widget.AppCompatTextView
+                            android:id="@+id/cal_cell47g"
+                            style="@style/CalendarGreg"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:text="00" />
+
+                    </LinearLayout>
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal">
+
+                    <LinearLayout
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:background="@drawable/border"
+                        android:orientation="vertical">
+
+                        <androidx.appcompat.widget.AppCompatTextView
+                            android:id="@+id/cal_cell51h"
+                            style="@style/CalendarHijri"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:text="00" />
+
+                        <androidx.appcompat.widget.AppCompatTextView
+                            android:id="@+id/cal_cell51g"
+                            style="@style/CalendarGreg"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:text="00" />
+
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:background="@drawable/border"
+                        android:orientation="vertical">
+
+                        <androidx.appcompat.widget.AppCompatTextView
+                            android:id="@+id/cal_cell52h"
+                            style="@style/CalendarHijri"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:text="00" />
+
+                        <androidx.appcompat.widget.AppCompatTextView
+                            android:id="@+id/cal_cell52g"
+                            style="@style/CalendarGreg"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:text="00" />
+
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:background="@drawable/border"
+                        android:orientation="vertical">
+
+                        <androidx.appcompat.widget.AppCompatTextView
+                            android:id="@+id/cal_cell53h"
+                            style="@style/CalendarHijri"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:text="00" />
+
+                        <androidx.appcompat.widget.AppCompatTextView
+                            android:id="@+id/cal_cell53g"
+                            style="@style/CalendarGreg"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:text="00" />
+
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:background="@drawable/border"
+                        android:orientation="vertical">
+
+                        <androidx.appcompat.widget.AppCompatTextView
+                            android:id="@+id/cal_cell54h"
+                            style="@style/CalendarHijri"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:text="00" />
+
+                        <androidx.appcompat.widget.AppCompatTextView
+                            android:id="@+id/cal_cell54g"
+                            style="@style/CalendarGreg"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:text="00" />
+
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:background="@drawable/border"
+                        android:orientation="vertical">
+
+                        <androidx.appcompat.widget.AppCompatTextView
+                            android:id="@+id/cal_cell55h"
+                            style="@style/CalendarHijri"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:text="00" />
+
+                        <androidx.appcompat.widget.AppCompatTextView
+                            android:id="@+id/cal_cell55g"
+                            style="@style/CalendarGreg"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:text="00" />
+
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:background="@drawable/border"
+                        android:orientation="vertical">
+
+                        <androidx.appcompat.widget.AppCompatTextView
+                            android:id="@+id/cal_cell56h"
+                            style="@style/CalendarHijri"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:text="00" />
+
+                        <androidx.appcompat.widget.AppCompatTextView
+                            android:id="@+id/cal_cell56g"
+                            style="@style/CalendarGreg"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:text="00" />
+
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:background="@drawable/border"
+                        android:orientation="vertical">
+
+                        <androidx.appcompat.widget.AppCompatTextView
+                            android:id="@+id/cal_cell57h"
+                            style="@style/CalendarHijri"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:text="00" />
+
+                        <androidx.appcompat.widget.AppCompatTextView
+                            android:id="@+id/cal_cell57g"
+                            style="@style/CalendarGreg"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:text="00" />
+
+                    </LinearLayout>
+
+                </LinearLayout>
+
+            </LinearLayout>
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/cal_details"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="4dp"
+                android:background="@drawable/border"
+                android:layoutDirection="rtl"
+                android:paddingStart="4dp"
+                android:paddingEnd="4dp"
+                android:text="تفاصيل"
+                android:textSize="12sp" />
+
+        </LinearLayout>
+
+    </LinearLayout>
+
+</ScrollView>

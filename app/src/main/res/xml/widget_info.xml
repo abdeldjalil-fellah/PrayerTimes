@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<appwidget-provider xmlns:android="http://schemas.android.com/apk/res/android"
+    android:initialKeyguardLayout="@layout/app_widget_main"
+    android:initialLayout="@layout/app_widget_main"
+    android:minWidth="250dp"
+    android:minHeight="180dp"
+    android:resizeMode="vertical|horizontal"
+    android:previewImage="@drawable/widget"
+    android:updatePeriodMillis="0"
+    android:configure="jalil.prayertimes.ActivityWidgetConfigure"
+    android:widgetCategory="home_screen" />
+
+<!--
+cellsNumber     : minValue = (70 * cellsNumber) − 30
+1               : 40dp
+2               : 110dp
+3               : 180dp
+4               : 250dp
+-->
