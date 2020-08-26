@@ -23,9 +23,9 @@ class Constants {
     static final String FILE_NAME_DB_UHC = "uhc.db";
     static final String FILE_NAME_DB_UAQ = "uaq.db";
 
-    static final String FILE_NAME_FAV_SAMPLE = "مسجد أبو بكر الصديق - زدين";
+    static final String FILE_NAME_FAV_SAMPLE = "زدين مركز";
 
-    static final String FAV_DEFAULT = "(افتراضي : مسجد الرحمة - الجزائر)";
+    static final String FAV_DEFAULT = "(افتراضي : مسجد الرحمة الجزائر الوسطى)";
 
     static final String APP_TAG = "PRAYER_TIMES";
 
@@ -157,7 +157,7 @@ class Constants {
     static final int WDG_DEFAULT_ACTUAL_CITY_ID = 27;
     static final String WDG_DEFAULT_ACTUAL_CITY_NAME = "الجزائر";
     static final String WDG_DEFAULT_CALC_LOCATION = "+36.766518/+03.054137/+01:00";
-    static final String WDG_DEFAULT_CALC_LOCATION_NAME = "مسجد الرحمة - الجزائر";
+    static final String WDG_DEFAULT_CALC_LOCATION_NAME = "مسجد الرحمة الجزائر الوسطى";
     static final String WDG_DEFAULT_CALC_PARAMS = "18.00/17.00/03.50/03.50/10.00/00.50/01.00/06.00";
     static final String WDG_DEFAULT_IQAMA = "20/15/15/10/10";
     static final String WDG_DEFAULT_OFFSET = "+00/-20/+00/+00/+00/+00";

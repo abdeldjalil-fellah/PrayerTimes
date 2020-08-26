@@ -238,7 +238,7 @@ public class ActivityWidgetConfigure extends AppCompatActivity
                 WidgetConfiguration widgetConfiguration = new WidgetConfiguration();
                 widgetConfiguration.cLocationActualId = 32;
                 widgetConfiguration.cLocationActualName = "عين الدفلى";
-                widgetConfiguration.cLocationCalcName = "مسجد أبو بكر الصديق - زدين";
+                widgetConfiguration.cLocationCalcName = "زدين مركز";
                 widgetConfiguration.cLocationCalcParams = "+36.155699/+01.821287/+01:00";
                 widgetConfiguration.cLocationIqama = "15/15/15/05/10";
                 widgetConfiguration.cLocationOffset = "+00/-20/+00/+00/+00/+00";

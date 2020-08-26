@@ -1,16 +1,14 @@
 package jalil.prayertimes;
 
-import android.app.Activity;
-import android.content.Intent;
-import android.graphics.Bitmap;
-import android.graphics.Canvas;
-import android.net.Uri;
-import android.os.AsyncTask;
 import android.os.Bundle;
+import android.text.Editable;
+import android.text.TextWatcher;
 import android.view.View;
+import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.CheckBox;
+import android.widget.CompoundButton;
 import android.widget.EditText;
 import android.widget.LinearLayout;
 import android.widget.Spinner;
@@ -18,10 +16,6 @@ import android.widget.TextView;
 
 import androidx.appcompat.app.AppCompatActivity;
 
-import java.io.File;
-import java.io.FileOutputStream;
-import java.io.IOException;
-import java.lang.ref.WeakReference;
 import java.util.Arrays;
 import java.util.Calendar;
 import java.util.GregorianCalendar;
@@ -30,12 +24,12 @@ import java.util.Locale;
 
 public class ActivityCalendar extends AppCompatActivity {
 
-    Button buttonGo;
+    Button buttonGo, buttonImage;
     EditText editYear;
     Spinner spinnerMonth;
-    CheckBox checkDetails, checkShot;
+    CheckBox checkDetails, checkCalendar;
     TextView viewHeader, viewDetails;
-    LinearLayout linearLayout;
+    LinearLayout linearContainer, linearCalendar, linearSeparator;
 
     int method, adjust;
 
@@ -55,7 +49,9 @@ public class ActivityCalendar extends AppCompatActivity {
 
         final String todayHijri = Utilities.toDateHijri(Variables.getDate(Variables.getCurrentDateTime()), adjust, method, this, false, null, null);
 
-        linearLayout = findViewById(R.id.cal_linear);
+        linearCalendar = findViewById(R.id.cal_calendar);
+        linearSeparator = findViewById(R.id.cal_separator);
+        linearContainer = findViewById(R.id.cal_linear);
 
         spinnerMonth = findViewById(R.id.cal_spinner_month);
         spinnerMonth.setAdapter(new ArrayAdapter<>(ActivityCalendar.this, R.layout.simple_spinner_item, new String[]{
@@ -75,6 +71,72 @@ public class ActivityCalendar extends AppCompatActivity {
 
         editYear = findViewById(R.id.cal_edit_year);
 
+        viewDetails = findViewById(R.id.cal_details);
+        viewHeader = findViewById(R.id.cal_header);
+
+        checkDetails = findViewById(R.id.cal_check_details);
+        checkCalendar = findViewById(R.id.cal_check_calendar);
+
+        checkCalendar.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
+            @Override
+            public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
+                createCalendar();
+            }
+        });
+
+        checkDetails.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
+            @Override
+            public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
+                createCalendar();
+            }
+        });
+
+        spinnerMonth.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
+            @Override
+            public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
+                createCalendar();
+            }
+
+            @Override
+            public void onNothingSelected(AdapterView<?> parent) {
+
+            }
+        });
+
+        buttonGo = findViewById(R.id.cal_button_go);
+        buttonGo.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                createCalendar();
+            }
+        });
+
+        buttonImage = findViewById(R.id.cal_button_image);
+        buttonImage.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+
+                String fileName = null;
+
+                if (checkCalendar.isChecked() && checkDetails.isChecked()) {
+                    fileName = headerHijri + " مع الملحق";
+                } else {
+
+                    if (checkCalendar.isChecked()) {
+                        fileName = headerHijri;
+                    }
+
+                    if (checkDetails.isChecked()) {
+                        fileName = headerHijri + " ملحق";
+                    }
+                }
+
+                if (fileName != null) {
+                    new AsyncSaveScreenshot(ActivityCalendar.this, Utilities.createBitmapFromView(linearContainer), fileName).doInBackground();
+                }
+            }
+        });
+
         if (todayHijri.equals(Constants.INVALID_STRING)) {
             spinnerMonth.setSelection(0);
             editYear.setText("1441");
@@ -85,27 +147,11 @@ public class ActivityCalendar extends AppCompatActivity {
             spinnerMonth.setSelection(c[1] - 1);
             editYear.setText(c[0] + "");
         }
-
-        viewDetails = findViewById(R.id.cal_details);
-        viewHeader = findViewById(R.id.cal_header);
-
-        checkDetails = findViewById(R.id.cal_check_details);
-        checkShot = findViewById(R.id.cal_check_shot);
-
-        buttonGo = findViewById(R.id.cal_button_go);
-        buttonGo.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                createCalendar();
-            }
-        });
     }
 
     @Override
     protected void onStart() {
         super.onStart();
-
-        createCalendar();
     }
 
     boolean handleCell(int w, int d, Calendar calendar, int hDay) {
@@ -164,9 +210,11 @@ public class ActivityCalendar extends AppCompatActivity {
         return filled;
     }
 
+    String headerHijri = null, headerGreg = null;
+
     void createCalendar() {
 
-        linearLayout.setVisibility(View.GONE);
+        linearContainer.setVisibility(View.GONE);
 
         String dateHijriFirst = editYear.getText().toString() + "-" + String.format(Locale.ROOT, "%02d", spinnerMonth.getSelectedItemPosition() + 1) + "-01";
         String dateGregFirst = Utilities.toDateGregorian(dateHijriFirst, method, adjust, ActivityCalendar.this);
@@ -207,10 +255,22 @@ public class ActivityCalendar extends AppCompatActivity {
             }
         }
 
-        String headerHijri = String.format(Locale.ROOT, "%s \u200F%04dهـ", spinnerMonth.getSelectedItem(), cH[0]);
-        String headerGreg = String.format(Locale.ROOT, "%s \u200F%04dم", Utilities.getMonthNameGregorianAssyrian(cG[1]), cG[0]);
+        headerHijri = String.format(Locale.ROOT, "%s \u200F%04dهـ", spinnerMonth.getSelectedItem(), cH[0]);
+        headerGreg = String.format(Locale.ROOT, "%s \u200F%04dم", Utilities.getMonthNameGregorianAssyrian(cG[1]), cG[0]);
 
-        viewHeader.setText(headerHijri + " - " + headerGreg);
+        viewHeader.setText(String.format("%s - %s", headerHijri, headerGreg));
+
+        if (checkCalendar.isChecked()) {
+            linearCalendar.setVisibility(View.VISIBLE);
+        } else {
+            linearCalendar.setVisibility(View.GONE);
+        }
+
+        if (checkCalendar.isChecked() && checkDetails.isChecked()) {
+            linearSeparator.setVisibility(View.VISIBLE);
+        } else {
+            linearSeparator.setVisibility(View.GONE);
+        }
 
         if (checkDetails.isChecked()) {
             StringBuilder builder = new StringBuilder();
@@ -224,11 +284,6 @@ public class ActivityCalendar extends AppCompatActivity {
             viewDetails.setVisibility(View.GONE);
         }
 
-        linearLayout.setVisibility(View.VISIBLE);
-
-        if (checkShot.isChecked()) {
-
-            new AsyncSaveScreenshot(this, Utilities.createBitmapFromView(linearLayout), headerHijri).doInBackground();
-        }
+        linearContainer.setVisibility(View.VISIBLE);
     }
 }

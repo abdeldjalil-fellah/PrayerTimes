@@ -28,17 +28,18 @@
                 android:orientation="horizontal">
 
                 <CheckBox
-                    android:id="@+id/cal_check_details"
+                    android:id="@+id/cal_check_calendar"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:checked="true"
-                    android:text="ملحق" />
+                    android:text="التقويم" />
 
                 <CheckBox
-                    android:id="@+id/cal_check_shot"
+                    android:id="@+id/cal_check_details"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="صورة" />
+                    android:checked="false"
+                    android:text="الملحق" />
 
                 <Spinner
                     android:id="@+id/cal_spinner_month"
@@ -52,18 +53,34 @@
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
-                    android:digits="0123456789"
+                    android:inputType="number"
                     android:layoutDirection="ltr"
                     android:maxLength="4" />
 
             </LinearLayout>
 
-            <Button
-                android:id="@+id/cal_button_go"
+            <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:stateListAnimator="@null"
-                android:text="إنشاء" />
+                android:orientation="horizontal">
+
+                <Button
+                    android:id="@+id/cal_button_go"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:stateListAnimator="@null"
+                    android:text="إنشاء" />
+
+                <Button
+                    android:id="@+id/cal_button_image"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:stateListAnimator="@null"
+                    android:text="صورة" />
+
+            </LinearLayout>
 
         </LinearLayout>
 
@@ -76,24 +93,25 @@
             android:padding="4dp"
             android:visibility="invisible">
 
-            <androidx.appcompat.widget.AppCompatTextView
-                android:id="@+id/cal_header"
-                style="@style/CalendarDayOfWeek"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layoutDirection="rtl"
-                android:lines="1"
-                android:text="ربيع الآخر 1441هـ الموافق نوفمبر/ديسمبر 2019م" />
-
             <LinearLayout
+                android:id="@+id/cal_calendar"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="4dp"
                 android:orientation="vertical">
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:id="@+id/cal_header"
+                    style="@style/CalendarDayOfWeek"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layoutDirection="rtl"
+                    android:lines="1"
+                    android:text="ربيع الآخر 1441هـ الموافق نوفمبر/ديسمبر 2019م" />
 
                 <LinearLayout
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
+                    android:layout_marginTop="4dp"
                     android:orientation="horizontal">
 
                     <androidx.appcompat.widget.AppCompatTextView
@@ -1003,11 +1021,17 @@
 
             </LinearLayout>
 
+            <LinearLayout
+                android:id="@+id/cal_separator"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:paddingTop="4dp"
+                android:orientation="vertical"/>
+
             <androidx.appcompat.widget.AppCompatTextView
                 android:id="@+id/cal_details"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="4dp"
                 android:background="@drawable/border"
                 android:layoutDirection="rtl"
                 android:paddingStart="4dp"

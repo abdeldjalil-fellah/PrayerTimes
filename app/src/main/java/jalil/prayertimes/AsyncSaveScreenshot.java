@@ -51,7 +51,7 @@ public class AsyncSaveScreenshot extends AsyncTask<Void, Void, Void> {
             intentSendFile.addFlags(Intent.FLAG_GRANT_READ_URI_PERMISSION);
             intentSendFile.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
             intentSendFile.setType("image/png");
-            activity.startActivity(Intent.createChooser(intentSendFile, "مشاركة الصورة"));
+            activity.startActivity(Intent.createChooser(intentSendFile, "مشاركة الصورة : " + fileName));
 
         } catch (IOException e) {
             e.printStackTrace();

@@ -40,11 +40,11 @@ CREATE VIEW V_TIMES AS
            CAST (SUBSTR(GeoDate, 1, 4) AS INTEGER) AS GREG_YEAR,
            CAST (SUBSTR(GeoDate, 6, 2) AS INTEGER) AS GREG_MONTH,
            CAST (SUBSTR(GeoDate, 9, 2) AS INTEGER) AS GREG_DAY,
-           SUBSTR(Fajr, 1, 5) AS FAJR,
-           SUBSTR(Dhuhr, 1, 5) AS DHUHR,
-           SUBSTR(Asr, 1, 5) AS ASR,
-           SUBSTR(Maghrib, 1, 5) AS MAGHRIB,
-           SUBSTR(Isha, 1, 5) AS ISHA
+           CASE WHEN SUBSTR(Fajr, 2, 1) == ':' THEN '0' || SUBSTR(Fajr, 1, 4) ELSE SUBSTR(Fajr, 1, 5) END AS FAJR,
+           CASE WHEN SUBSTR(Dhuhr, 2, 1) == ':' THEN '0' || SUBSTR(Dhuhr, 1, 4) ELSE SUBSTR(Dhuhr, 1, 5) END AS DHUHR,
+           CASE WHEN SUBSTR(Asr, 2, 1) == ':' THEN '0' || SUBSTR(Asr, 1, 4) ELSE SUBSTR(Asr, 1, 5) END AS ASR,
+           CASE WHEN SUBSTR(Maghrib, 2, 1) == ':' THEN '0' || SUBSTR(Maghrib, 1, 4) ELSE SUBSTR(Maghrib, 1, 5) END AS MAGHRIB,
+           CASE WHEN SUBSTR(Isha, 2, 1) == ':' THEN '0' || SUBSTR(Isha, 1, 4) ELSE SUBSTR(Isha, 1, 5) END AS ISHA
       FROM itc_tab_mawakit_salat
      ORDER BY MADINA_ID,
               GeoDate;
