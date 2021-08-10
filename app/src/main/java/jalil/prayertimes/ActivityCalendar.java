@@ -3,6 +3,7 @@ package jalil.prayertimes;
 import android.os.Bundle;
 import android.text.Editable;
 import android.text.TextWatcher;
+import android.text.format.DateUtils;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
@@ -193,6 +194,11 @@ public class ActivityCalendar extends AppCompatActivity {
                 default:
                     cellH.setBackgroundColor(Variables.colorTransparent);
                     cellG.setBackgroundColor(Variables.colorTransparent);
+            }
+
+            if (DateUtils.isToday(calendar.getTimeInMillis())) {
+                cellH.setBackgroundColor(Variables.colorYellow);
+                cellG.setBackgroundColor(Variables.colorYellow);
             }
 
             filled = true;

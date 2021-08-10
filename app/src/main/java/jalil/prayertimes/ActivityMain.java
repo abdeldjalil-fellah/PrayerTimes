@@ -34,6 +34,7 @@ import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import java.io.File;
 import java.text.DecimalFormat;
 import java.util.Calendar;
 import java.util.Locale;
@@ -116,6 +117,8 @@ public class ActivityMain extends AppCompatActivity implements IAsyncCompleted, 
 
         View decor = getWindow().getDecorView();
         decor.setLayoutDirection(View.LAYOUT_DIRECTION_RTL);
+
+        Utilities.copyAssetsFile(this, Constants.DIR_NAME_DB + File.separator + Constants.FILE_NAME_DB_MARW, Variables.getFullNameDb(this, Constants.FILE_NAME_DB_MARW), true);
 
         hasCompass = Variables.hasCompass(this);
 

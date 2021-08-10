@@ -49,6 +49,7 @@ class Constants {
     static final String WG_TEXTCOLOR_GREEN = "#33ff00";
     static final String WG_TEXTCOLOR_ORANGE = "#ffaa00";
     static final String WG_TEXTCOLOR_RED = "#ff3300";
+    static final String WG_TEXTCOLOR_YELLOW = "#ffff00";
 
     static final String WG_TEXTCOLOR_BLUE_LIGHT = "#8ba5bc";
     static final String WG_TEXTCOLOR_GREEN_LIGHT = "#d2e9af";
