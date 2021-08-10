@@ -61,6 +61,7 @@ class Variables {
     static int colorGreen = Color.parseColor(Constants.WG_TEXTCOLOR_GREEN);
     static int colorOrange = Color.parseColor(Constants.WG_TEXTCOLOR_ORANGE);
     static int colorRed = Color.parseColor(Constants.WG_TEXTCOLOR_RED);
+    static int colorYellow = Color.parseColor(Constants.WG_TEXTCOLOR_YELLOW);
 
     static int colorBlueLight = Color.parseColor(Constants.WG_TEXTCOLOR_BLUE_LIGHT);
     static int colorGreenLight = Color.parseColor(Constants.WG_TEXTCOLOR_GREEN_LIGHT);

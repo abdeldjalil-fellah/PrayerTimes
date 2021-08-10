@@ -11,8 +11,6 @@ public class Database extends SQLiteOpenHelper {
     public Database(Context context, String dbFileName) {
 
         super(context, Variables.getFullNameDb(context, dbFileName), null, 1);
-
-        Utilities.copyAssetsFile(context, Constants.DIR_NAME_DB + File.separator + dbFileName, Variables.getFullNameDb(context, dbFileName), false);
     }
 
     @Override
