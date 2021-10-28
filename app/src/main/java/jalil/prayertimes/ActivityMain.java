@@ -118,9 +118,9 @@ public class ActivityMain extends AppCompatActivity implements IAsyncCompleted, 
         View decor = getWindow().getDecorView();
         decor.setLayoutDirection(View.LAYOUT_DIRECTION_RTL);
 
-        Utilities.copyAssetsFile(this, Constants.DIR_NAME_DB + File.separator + Constants.FILE_NAME_DB_MARW, Variables.getFullNameDb(this, Constants.FILE_NAME_DB_MARW), true);
-        Utilities.copyAssetsFile(this, Constants.DIR_NAME_DB + File.separator + Constants.FILE_NAME_DB_UAQ, Variables.getFullNameDb(this, Constants.FILE_NAME_DB_UAQ), true);
-        Utilities.copyAssetsFile(this, Constants.DIR_NAME_DB + File.separator + Constants.FILE_NAME_DB_UHC, Variables.getFullNameDb(this, Constants.FILE_NAME_DB_UHC), true);
+        Utilities.copyAssetsFile(this, Constants.DIR_NAME_DB + File.separator + Constants.FILE_NAME_DB_MARW, Variables.getFullNameDb(this, Constants.FILE_NAME_DB_MARW), false);
+        Utilities.copyAssetsFile(this, Constants.DIR_NAME_DB + File.separator + Constants.FILE_NAME_DB_UAQ, Variables.getFullNameDb(this, Constants.FILE_NAME_DB_UAQ), false);
+        Utilities.copyAssetsFile(this, Constants.DIR_NAME_DB + File.separator + Constants.FILE_NAME_DB_UHC, Variables.getFullNameDb(this, Constants.FILE_NAME_DB_UHC), false);
 
         hasCompass = Variables.hasCompass(this);
 
