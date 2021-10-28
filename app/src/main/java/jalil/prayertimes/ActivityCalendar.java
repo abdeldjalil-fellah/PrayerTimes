@@ -28,7 +28,7 @@ public class ActivityCalendar extends AppCompatActivity {
     Button buttonGo, buttonImage;
     EditText editYear;
     Spinner spinnerMonth;
-    CheckBox checkDetails, checkCalendar;
+    CheckBox checkDetails, checkCalendar, checkCalendarToday;
     TextView viewHeader, viewDetails;
     LinearLayout linearContainer, linearCalendar, linearSeparator;
 
@@ -77,10 +77,20 @@ public class ActivityCalendar extends AppCompatActivity {
 
         checkDetails = findViewById(R.id.cal_check_details);
         checkCalendar = findViewById(R.id.cal_check_calendar);
+        checkCalendarToday = findViewById(R.id.cal_check_calendar_today);
 
         checkCalendar.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
             @Override
             public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
+                if(!isChecked) checkCalendarToday.setChecked(false);
+                createCalendar();
+            }
+        });
+
+        checkCalendarToday.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
+            @Override
+            public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
+                if(isChecked) checkCalendar.setChecked(true);
                 createCalendar();
             }
         });
@@ -196,7 +206,7 @@ public class ActivityCalendar extends AppCompatActivity {
                     cellG.setBackgroundColor(Variables.colorTransparent);
             }
 
-            if (DateUtils.isToday(calendar.getTimeInMillis())) {
+            if (checkCalendarToday.isChecked() && DateUtils.isToday(calendar.getTimeInMillis())) {
                 cellH.setBackgroundColor(Variables.colorYellow);
                 cellG.setBackgroundColor(Variables.colorYellow);
             }

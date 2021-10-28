@@ -25,6 +25,7 @@
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:gravity="center"
                 android:orientation="horizontal">
 
                 <CheckBox
@@ -35,11 +36,26 @@
                     android:text="التقويم" />
 
                 <CheckBox
+                    android:id="@+id/cal_check_calendar_today"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:checked="true"
+                    android:text="اليوم" />
+
+                <CheckBox
                     android:id="@+id/cal_check_details"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:checked="false"
                     android:text="الملحق" />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:orientation="horizontal">
 
                 <Spinner
                     android:id="@+id/cal_spinner_month"
@@ -50,9 +66,8 @@
 
                 <EditText
                     android:id="@+id/cal_edit_year"
-                    android:layout_width="0dp"
+                    android:layout_width="100dp"
                     android:layout_height="wrap_content"
-                    android:layout_weight="1"
                     android:inputType="number"
                     android:layoutDirection="ltr"
                     android:maxLength="4" />

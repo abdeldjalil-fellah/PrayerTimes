@@ -2,6 +2,10 @@ package jalil.prayertimes;
 
 class Constants {
 
+    static final String FILE_NAME_DB_MARW = "marw-0001.db";
+    static final String FILE_NAME_DB_UHC = "uhc-0001.db";
+    static final String FILE_NAME_DB_UAQ = "uaq-0001.db";
+
     static final String PARSE_CLASS_CALENDAR = "Calendar";
     static final String PARSE_COLUMN_CALENDAR_DATE_GREG = "dateGreg";
     static final String PARSE_COLUMN_CALENDAR_METHOD_HIJRI = "methodHijri";
@@ -12,16 +16,10 @@ class Constants {
     static final int REQUEST_CODE_PERMISSIONS = 1;
     static final int REQUEST_CODE_WIDGET_CONFIGURE = 2;
 
-    static final String DIR_NAME_ROOT = "PrayerTimes";
-
     static final String DIR_NAME_DB = "databases";
     static final String DIR_NAME_FAV = "favorites";
     static final String DIR_NAME_WG = "widgets";
     static final String DIR_NAME_SHOT = "screenshots";
-
-    static final String FILE_NAME_DB_MARW = "marw.db";
-    static final String FILE_NAME_DB_UHC = "uhc.db";
-    static final String FILE_NAME_DB_UAQ = "uaq.db";
 
     static final String FILE_NAME_FAV_SAMPLE = "زدين مركز";
 
@@ -158,7 +156,7 @@ class Constants {
     static final int WDG_DEFAULT_ACTUAL_CITY_ID = 27;
     static final String WDG_DEFAULT_ACTUAL_CITY_NAME = "الجزائر";
     static final String WDG_DEFAULT_CALC_LOCATION = "+36.766518/+03.054137/+01:00";
-    static final String WDG_DEFAULT_CALC_LOCATION_NAME = "مسجد الرحمة الجزائر الوسطى";
+    static final String WDG_DEFAULT_CALC_LOCATION_NAME = "الجزائر الوسطى";
     static final String WDG_DEFAULT_CALC_PARAMS = "18.00/17.00/03.50/03.50/10.00/00.50/01.00/06.00";
     static final String WDG_DEFAULT_IQAMA = "20/15/15/10/10";
     static final String WDG_DEFAULT_OFFSET = "+00/-20/+00/+00/+00/+00";

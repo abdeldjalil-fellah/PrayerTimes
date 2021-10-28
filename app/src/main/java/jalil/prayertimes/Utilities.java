@@ -860,7 +860,7 @@ class Utilities {
 
         File file = new File(destinationFileFullName);
 
-        if (!file.exists() || overwrite) {
+        if (overwrite || !file.exists()) {
             try {
                 InputStream input = context.getAssets().open(assetFileName);
                 OutputStream output = new FileOutputStream(destinationFileFullName);
@@ -880,7 +880,8 @@ class Utilities {
                 e.printStackTrace();
                 return false;
             }
-        } else {
+        }
+        else {
             return false;
         }
     }
