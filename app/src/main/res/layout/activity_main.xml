@@ -597,22 +597,6 @@
             <androidx.appcompat.widget.LinearLayoutCompat
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="4dp"
-                android:orientation="horizontal">
-
-                <Spinner
-                    android:id="@+id/am_spinner_earth_model"
-                    android:layout_width="0dp"
-                    android:layout_height="wrap_content"
-                    android:layout_gravity="center"
-                    android:layout_weight="4"
-                    android:spinnerMode="dropdown" />
-
-            </androidx.appcompat.widget.LinearLayoutCompat>
-
-            <androidx.appcompat.widget.LinearLayoutCompat
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
                 android:layout_marginTop="12dp"
                 android:orientation="horizontal">
 
@@ -675,6 +659,22 @@
                     android:padding="4dp"
                     android:textAlignment="center"
                     android:textColor="@android:color/holo_red_dark" />
+
+            </androidx.appcompat.widget.LinearLayoutCompat>
+
+            <androidx.appcompat.widget.LinearLayoutCompat
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="4dp"
+                android:orientation="horizontal">
+
+                <Spinner
+                    android:id="@+id/am_spinner_earth_model"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:layout_weight="4"
+                    android:spinnerMode="dropdown" />
 
             </androidx.appcompat.widget.LinearLayoutCompat>
 
