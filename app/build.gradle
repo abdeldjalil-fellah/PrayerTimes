@@ -1,14 +1,14 @@
 apply plugin: 'com.android.application'
 
 android {
-    compileSdkVersion 30
+    compileSdkVersion 31
 
     defaultConfig {
         applicationId "jalil.prayertimes"
         minSdkVersion 19
-        targetSdkVersion 30
-        versionCode 20211112
-        versionName "0.43.4.7"
+        targetSdkVersion 31
+        versionCode 20220730
+        versionName "0.43.12.30"
     }
 
     buildTypes {
@@ -32,10 +32,9 @@ android.applicationVariants.all { variant ->
     variant.outputs.all {
 
         def name = "PrayerTimes"
-        //def version = "v" + variant.versionName
-        def date = new Date().format('yyyy.MM.dd')
+        //def date = new Date().format('yyyy.MM.dd')
 
-        outputFileName = name + "_" + date + ".apk"
+        outputFileName = name + "_" + variant.versionCode + ".apk"
     }
 }
 
@@ -43,9 +42,9 @@ dependencies {
 
     implementation files('libs/geographicLib.jar')
 
-    implementation 'androidx.appcompat:appcompat:1.3.1'
+    implementation 'androidx.appcompat:appcompat:1.4.0'
     implementation 'com.google.android.material:material:1.4.0'
-    implementation 'androidx.constraintlayout:constraintlayout:2.1.1'
+    implementation 'androidx.constraintlayout:constraintlayout:2.1.2'
     implementation 'com.google.code.gson:gson:2.8.6'
     implementation 'pub.devrel:easypermissions:3.0.0'
 

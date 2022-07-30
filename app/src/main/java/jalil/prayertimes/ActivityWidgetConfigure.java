@@ -240,7 +240,7 @@ public class ActivityWidgetConfigure extends AppCompatActivity
                 widgetConfiguration.cLocationActualName = "عين الدفلى";
                 widgetConfiguration.cLocationCalcName = "زدين مركز";
                 widgetConfiguration.cLocationCalcParams = "+36.155699/+01.821287/+01:00";
-                widgetConfiguration.cLocationIqama = "15/15/15/05/10";
+                widgetConfiguration.cLocationIqama = "20/15/15/05/10";
                 widgetConfiguration.cLocationOffset = "+00/-20/+00/+00/+00/+00";
 
                 if (widgetConfiguration.toFavoriteFile(ActivityWidgetConfigure.this, Constants.FILE_NAME_FAV_SAMPLE)) {

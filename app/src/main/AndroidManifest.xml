@@ -3,6 +3,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     package="jalil.prayertimes">
 
+    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
     <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
 
     <uses-permission android:name="android.permission.INTERNET" />
@@ -21,6 +22,7 @@
     <application
         android:name=".ApplicationMain"
         android:allowBackup="true"
+        android:fullBackupContent="true"
         android:icon="@drawable/prayertimes"
         android:label="@string/app_name"
         android:supportsRtl="true"
@@ -34,10 +36,10 @@
 
         <activity
             android:name=".ActivityMain"
+            android:exported="true"
             android:windowSoftInputMode="stateAlwaysHidden">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
-
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
@@ -54,10 +56,10 @@
 
         <receiver
             android:name=".AppWidgetMain"
+            android:exported="true"
             android:label="مواقيت الصلاة">
             <intent-filter>
                 <action android:name="android.appwidget.action.APPWIDGET_UPDATE" />
-
                 <action android:name="android.intent.action.USER_PRESENT" />
                 <action android:name="android.intent.action.SCREEN_ON" />
             </intent-filter>
@@ -70,6 +72,7 @@
         <activity
             android:name=".ActivityWidgetConfigure"
             android:excludeFromRecents="true"
+            android:exported="true"
             android:windowSoftInputMode="stateAlwaysHidden">
             <intent-filter>
                 <action android:name="android.appwidget.action.APPWIDGET_CONFIGURE" />

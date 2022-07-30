@@ -21,3 +21,4 @@
 #-renamesourcefileattribute SourceFile
 
 -keep class jalil.prayertimes.WidgetConfiguration { *; }
+

@@ -1,3 +1,12 @@
+-- Backup أذان الجزائر الرسمي using Cx Explorer
+-- Extract assets\mindb.db
+-- run these queries on it
+-- rename it to marw-<hyear>.db
+-- put it in assets\databases
+-- update Constants.FILE_NAME_DB_MARW
+-- update versionCode and versionName in build.gradle then build the new APK
+-- commit, create tag, push, attach APK file to release
+
 DROP TABLE itc_tab_ahdath;
 
 DROP TABLE itc_tab_fawaid;
