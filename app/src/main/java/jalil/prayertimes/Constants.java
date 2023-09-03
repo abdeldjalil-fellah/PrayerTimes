@@ -2,7 +2,7 @@ package jalil.prayertimes;
 
 class Constants {
 
-    static final String FILE_NAME_DB_MARW = "marw-1444.db";
+    static final String FILE_NAME_DB_MARW = "marw-1445.db";
     static final String FILE_NAME_DB_UHC = "uhc-0001.db";
     static final String FILE_NAME_DB_UAQ = "uaq-0001.db";
 

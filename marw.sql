@@ -1,10 +1,10 @@
--- Backup أذان الجزائر الرسمي using Cx Explorer
--- Extract assets\mindb.db
--- run these queries on it
+-- Backup أذان الجزائر الرسمي using Cx Explorer to backup.apk
+-- Extract backup.apk\base.apk\assets\mindb.db using 7-Zip
+-- run these queries on it using SQLiteStudio
 -- rename it to marw-<hyear>.db
--- put it in assets\databases
+-- put it in app\src\main\assets\databases
 -- update Constants.FILE_NAME_DB_MARW
--- update versionCode and versionName in build.gradle then build the new APK
+-- update versionCode and versionName in app\build.gradle then build the new APK
 -- commit, create tag, push, attach APK file to release
 
 DROP TABLE itc_tab_ahdath;
