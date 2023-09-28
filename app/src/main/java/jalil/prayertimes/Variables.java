@@ -137,10 +137,10 @@ class Variables {
     static Gson gson = new Gson();
     static Gson gsonPrettyPrinting = new GsonBuilder().setPrettyPrinting().create();
 
-    private static AsyncVersion asyncVersion;
     private static ParseQuery<ParseObject> asyncHijri;
     private static ParseQuery<ParseObject> asyncHijriUpload;
 
+    private static AsyncVersion asyncVersion;
     static void runAsyncVersion(Context context) {
         if (asyncVersion == null || asyncVersion.getStatus() == AsyncTask.Status.FINISHED) {
             asyncVersion = new AsyncVersion(context);

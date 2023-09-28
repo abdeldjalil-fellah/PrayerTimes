@@ -1274,7 +1274,6 @@ public class AppWidgetMain extends AppWidgetProvider implements SensorEventListe
     @Override
     public void onUpdate(Context context, AppWidgetManager appWidgetManager, int[] appWidgetIds) {
 
-        Variables.runAsyncVersion(context);
         Variables.runAsyncHijriAutoUpdate(context);
 
         for (int appWidgetId : appWidgetIds) {

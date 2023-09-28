@@ -7,8 +7,8 @@ android {
         applicationId "jalil.prayertimes"
         minSdkVersion 21
         targetSdkVersion 34
-        versionCode 20230903
-        versionName "0.45.2.18"
+        versionCode 20230928
+        versionName "0.45.3.13"
     }
 
     buildTypes {
