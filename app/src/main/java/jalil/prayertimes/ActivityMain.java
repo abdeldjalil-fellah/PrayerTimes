@@ -85,7 +85,8 @@ public class ActivityMain extends AppCompatActivity implements IAsyncCompleted, 
     final static int DEFAULT_HIJRI_METHOD = HIJRI_METHOD_QUAE;
     final static int DEFAULT_HIJRI_ADJUST_DAYS = 0;
     static final int DEFAULT_EARTH_MODEL = EarthCalculation.EARTH_MODEL_WGS84;
-    static final String DEFAULT_LATEST_VERSION_MESSAGE = String.format("%s%s(للبحث عن أحدث إصدار يرجى الاتصال بالإنترنت)", Constants.ABOUT_VERSION, Constants.NEW_LINE);
+    static final String DEFAULT_LATEST_VERSION_MESSAGE = Constants.ABOUT_VERSION;
+    //static final String DEFAULT_LATEST_VERSION_MESSAGE = String.format("%s%s(للبحث عن أحدث إصدار يرجى الاتصال بالإنترنت)", Constants.ABOUT_VERSION, Constants.NEW_LINE);
 
     CheckBox checkHijriAuto;
     TextView viewInfo, viewHijri;
@@ -364,13 +365,6 @@ public class ActivityMain extends AppCompatActivity implements IAsyncCompleted, 
 
         viewInfo = findViewById(R.id.am_view_info);
         viewInfo.setText(String.format("%s", prefLatestVersionMessage(this)));
-        viewInfo.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Variables.runAsyncVersion(ActivityMain.this);
-                Toast.makeText(ActivityMain.this, "يتم الآن البحث عن نسخة جديدة...", Toast.LENGTH_LONG).show();
-            }
-        });
 
         viewHijri = findViewById(R.id.am_view_hijri);
         viewHijri.setOnClickListener(new View.OnClickListener() {
@@ -522,8 +516,6 @@ public class ActivityMain extends AppCompatActivity implements IAsyncCompleted, 
         });
 
         checkHijriAuto.setChecked(prefHijriAuto(this));
-
-        Variables.runAsyncVersion(this);
     }
 
     void compassStop() {

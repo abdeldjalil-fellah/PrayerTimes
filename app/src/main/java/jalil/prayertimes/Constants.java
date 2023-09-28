@@ -181,7 +181,7 @@ class Constants {
     static final int LOCATION_METHOD_GOOGLE = 0;
     static final int LOCATION_METHOD_OSM = 1;
 
-    static final String URL_LATEST_GITHUB = "https://github.com/jalil1408/PrayerTimes/releases/latest";
+    static final String URL_LATEST_GITHUB = "https://github.com/abdeldjalil-fellah/PrayerTimes/releases/latest";
 
     static final String MAIN_SHADOW_PARAMS = "+01:00/00:10:00/060";
     static final int MAIN_SHADOW_DATETIME_TO_OFFSET_MINUTES = 180;
