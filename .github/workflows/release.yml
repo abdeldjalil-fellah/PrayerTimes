@@ -1,0 +1,73 @@
+name: Release
+
+on:
+  workflow_dispatch: # trigger manually
+
+jobs:
+
+  deploy:
+    runs-on: ubuntu-latest
+      
+    steps:
+
+      - name: Set timezone
+        run: |
+          sudo timedatectl set-timezone Africa/Algiers
+          sudo systemctl restart syslog
+          
+      - name: Checkout code
+        uses: actions/checkout@v4
+        with:
+          ref: master 
+          
+      - name: Setup Java
+        uses: actions/setup-java@v4
+        with:
+          java-version: "11"
+          distribution: "temurin"
+          cache: gradle
+
+      - name: Increment version
+        run: |
+          datetime=$(date +"%y%m%d%H%M")
+          sed -i -E "s|versionCode ([0-9]+)|versionCode $datetime|g" ./app/build.gradle
+          sed -i -E "s|versionName \"([^\"]+)\"|versionName \"$datetime\"|g" ./app/build.gradle
+          cat ./app/build.gradle
+          
+      - name: Build
+        run: |
+         chmod +x ./gradlew 
+         ./gradlew bundleRelease 
+         ./gradlew assembleRelease 
+         find . -type f -name "*.aab"
+         find . -type f -name "*.apk"
+         
+      - name: Sign
+        run: |
+          #keytool -genkeypair -noprompt -v -dname "CN=officine.shabakett.com, OU=Shabakett, O=Shabakett, L=Algiers, ST=Algiers, C=DZ" -keystore keystore.jks -keyalg RSA -keysize 2048 -validity 3650 -alias ${{ secrets.ANDROID_KEY_ALIAS }} -storepass ${{ secrets.ANDROID_KEY_STORE_PASSWORD }} -keypass ${{ secrets.ANDROID_KEY_PASSWORD }}
+          base64 -d <<< "${{ secrets.ANDROID_KEYSTORE_FILE }}" > keystore.jks
+          jarsigner -keystore keystore.jks -storepass ${{ secrets.ANDROID_KEY_STORE_PASSWORD }} -keypass ${{ secrets.ANDROID_KEY_PASSWORD }} -sigalg SHA256withRSA -digestalg SHA-256 ./app/build/outputs/bundle/release/app-release.aab ${{ secrets.ANDROID_KEY_ALIAS }}
+          jarsigner -keystore keystore.jks -storepass ${{ secrets.ANDROID_KEY_STORE_PASSWORD }} -keypass ${{ secrets.ANDROID_KEY_PASSWORD }} -sigalg SHA256withRSA -digestalg SHA-256 ./app/build/outputs/apk/release/app-release-unsigned.apk ${{ secrets.ANDROID_KEY_ALIAS }}
+          mv ./app/build/outputs/apk/release/app-release-unsigned.apk ./app/build/outputs/apk/release/app-release.apk
+
+      - name: Upload to VPS
+        run: |
+          mkdir -p ~/.ssh
+          echo "${{ secrets.SSH_PRIVATE_KEY }}" > ~/.ssh/private.key
+          chmod 600 ~/.ssh/private.key
+          ssh-keyscan -p ${{ secrets.SSH_PORT }} ${{ secrets.SSH_HOST }} >> ~/.ssh/known_hosts
+          rsync -azP -e "ssh -i $HOME/.ssh/private.key -p ${{ secrets.SSH_PORT }}" ./app/build/outputs ${{ secrets.SSH_USERNAME }}@${{ secrets.SSH_HOST }}:${{ inputs.ASSETS_DIRECTORY }}
+
+      - name: Upload to Play Store
+        if: ${{ inputs.GOOGLE_PLAY_TRACK != '' }}
+        uses: r0adkll/upload-google-play@v1.1.3
+        with:
+          serviceAccountJsonPlainText: ${{ secrets.GOOGLE_PLAY_SERVICE_ACCOUNT_JSON }}
+          releaseFiles: ./app/build/outputs/bundle/release/app-release.aab 
+          # mappingFile: ./app/build/outputs/mapping/release/mapping.txt
+          packageName: com.shabakett.officine
+          track: ${{ inputs.GOOGLE_PLAY_TRACK }}
+            # internal : Internal testing
+            # beta : Open testing
+            # alpha, <custom> : Closed tesing
+            # production : Production
