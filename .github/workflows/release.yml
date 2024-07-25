@@ -24,12 +24,9 @@ jobs:
         cache: gradle
 
     - name: Build Release APK
-      env:
-        VERSION_NAME: ${{ github.event.inputs.version_name }}
-        VERSION_CODE: ${{ github.event.inputs.version_code }}
       run: |
         chmod +x gradlew
-        ./gradlew assembleRelease
+        ./gradlew assembleRelease -PversionName=${{ github.event.inputs.version_name }} -PversionCode=${{ github.event.inputs.version_code }}
         find . -type f -name "*.apk"
 
     - name: Upload APK
