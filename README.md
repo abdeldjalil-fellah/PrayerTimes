@@ -16,10 +16,10 @@ search forceResultsForToday on http://conga.oan.es/~alonso/doku.php?id=blog:sun_
 
 ## Build
 
-- Backup أذان الجزائر الرسمي using Cx Explorer to backup.apk
-- Extract backup.apk\base.apk\assets\mindb.db using 7-Zip
-- run marw.sql on it using SQLiteStudio
-- rename it to marw-<hyear>.db
-- put it in app\src\main\assets\databases
-- update Constants.FILE_NAME_DB_MARW
-- Build and release APK by running .github/workflows/release.yml
+- Backup `أذان الجزائر الرسمي` using `Cx Explorer` to backup.apk
+- Extract `backup.apk/base.apk/assets/mindb.db` using `7-Zip`
+- Run [marw.sql](marw.sql) on it using `SQLiteStudio`
+- rename it to `marw-<hyear>.db`
+- Put it in [databases](app/src/main/assets/databases) 
+- Update `FILE_NAME_DB_MARW` in [Constants](app/src/main/java/jalil/prayertimes/Constants.java)
+- Build and release APK by running [Github Workflow](.github/workflows/release.yml)
