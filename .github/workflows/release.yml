@@ -36,7 +36,7 @@ jobs:
       uses: actions/upload-artifact@v4
       with:
         name: app-release
-        path: app/build/outputs/apk/release/app-release-unsigned.apk
+        path: app/build/outputs/apk/release/PrayerTimes-${{ github.event.inputs.version_code }}.apk
 
   release:
     needs: build
@@ -64,6 +64,6 @@ jobs:
         GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
       with:
         upload_url: ${{ steps.create_release.outputs.upload_url }}
-        asset_path: ./app-release-unsigned.apk
+        asset_path: ./PrayerTimes-${{ github.event.inputs.version_code }}.apk
         asset_name: app-release-${{ github.event.inputs.version_name }}.apk
         asset_content_type: application/vnd.android.package-archive
