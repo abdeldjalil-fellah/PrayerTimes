@@ -32,7 +32,7 @@ android.applicationVariants.configureEach {variant ->
     variant.outputs.all {
         def name = "PrayerTimes"
         //def date = new Date().format('yyyy.MM.dd')
-        outputFileName = name + "_" + variant.versionCode + ".apk"
+        outputFileName = name + "-" + variant.versionCode + ".apk"
     }
 }
 
