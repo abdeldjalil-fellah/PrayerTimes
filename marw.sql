@@ -4,8 +4,7 @@
 -- rename it to marw-<hyear>.db
 -- put it in app\src\main\assets\databases
 -- update Constants.FILE_NAME_DB_MARW
--- update versionCode and versionName in app\build.gradle then build the new APK
--- commit, create tag, push, attach APK file to release
+-- Build and release APK by running .github/workflows/release.yml
 
 DROP TABLE itc_tab_ahdath;
 
