@@ -13,3 +13,13 @@
 - add forceResultsForToday to get correct rise/set/transit moon times for today not yesterday or tomorrow
 when timezone is different then UTC.
 search forceResultsForToday on http://conga.oan.es/~alonso/doku.php?id=blog:sun_moon_position
+
+## Build
+
+- Backup أذان الجزائر الرسمي using Cx Explorer to backup.apk
+- Extract backup.apk\base.apk\assets\mindb.db using 7-Zip
+- run marw.sql on it using SQLiteStudio
+- rename it to marw-<hyear>.db
+- put it in app\src\main\assets\databases
+- update Constants.FILE_NAME_DB_MARW
+- Build and release APK by running .github/workflows/release.yml
