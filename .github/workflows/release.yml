@@ -14,7 +14,7 @@ jobs:
   build:
     runs-on: ubuntu-latest
     steps:
-    - uses: actions/checkout@v3
+    - uses: actions/checkout@v4
 
     - name: Setup Java
       uses: actions/setup-java@v4
@@ -33,7 +33,7 @@ jobs:
         VERSION_CODE: ${{ github.event.inputs.version_code }}
 
     - name: Upload APK
-      uses: actions/upload-artifact@v3
+      uses: actions/upload-artifact@v4
       with:
         name: app-release
         path: app/build/outputs/apk/release/app-release-unsigned.apk
@@ -43,7 +43,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
     - name: Download APK from build
-      uses: actions/download-artifact@v3
+      uses: actions/download-artifact@v4
       with:
         name: app-release
 
