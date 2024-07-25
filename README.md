@@ -22,4 +22,4 @@ search forceResultsForToday on http://conga.oan.es/~alonso/doku.php?id=blog:sun_
 - rename it to `marw-<hyear>.db`
 - Put it in [databases](app/src/main/assets/databases) 
 - Update `FILE_NAME_DB_MARW` in [Constants](app/src/main/java/jalil/prayertimes/Constants.java)
-- Build and release APK by running [Github Workflow](.github/workflows/release.yml)
+- Build and release APK by running [Github Workflow](actions/workflows/release.yml)
