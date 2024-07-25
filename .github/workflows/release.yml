@@ -33,8 +33,8 @@ jobs:
 
     - name: Sign APK
       run: |
-        keytool -genkeypair -noprompt -v -dname "CN=prayertimes.jalil, OU=Jalil, O=Jalil, L=Algiers, ST=Algiers, C=DZ" -keystore keystore.jks -keyalg RSA -keysize 2048 -validity 3650 -alias alias1 -storepass storepass1 -keypass keypass1
-        jarsigner -keystore keystore.jks -storepass storepass1 -keypass keypass1 -sigalg SHA256withRSA -digestalg SHA-256 app/build/outputs/apk/release/PrayerTimes-${{ github.event.inputs.version_code }}.apk alias1
+        keytool -genkeypair -noprompt -v -dname "CN=prayertimes.jalil, OU=Jalil, O=Jalil, L=Algiers, ST=Algiers, C=DZ" -keystore keystore.jks -keyalg RSA -keysize 2048 -validity 3650 -alias alias1 -storepass pass1 -keypass pass1
+        jarsigner -keystore keystore.jks -storepass pass1 -keypass pass1 -sigalg SHA256withRSA -digestalg SHA-256 app/build/outputs/apk/release/PrayerTimes-${{ github.event.inputs.version_code }}.apk alias1
           
     - name: Create Release
       uses: svenstaro/upload-release-action@v2
